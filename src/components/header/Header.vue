@@ -32,9 +32,9 @@ export default {
 <style>
 .header{
   width: 100%;
-  padding: 25px 0 23px 0;
+  padding: 25px 20px 23px 20px;
   height: 71px;
-  background: #FFFFFF;
+  background:  var(--main-bg-white);
   box-shadow: 0px 2px 4px rgba(39, 39, 39, 0.1);
 }
 .header__content{

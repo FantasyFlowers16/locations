@@ -1,0 +1,13 @@
+.html, body{
+  font-family: 'Futura';
+  --main-bg-white: #fff;
+  --main-bg-black: #000;
+  --main-bg-dark: #353647;
+  --main-br-gray: #979797;
+  --main-txt-brown: #272727;
+  --main-light: #E9EEF3;
+  --main-orange:#FF6F00;
+  --main-orange2:#FFA800;
+  --main-error: #da0d0d;
+
+}

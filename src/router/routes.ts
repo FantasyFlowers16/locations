@@ -6,9 +6,14 @@ const routes: RouteRecordRaw[] = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/index/Index.vue') },
-      { path: '/category/:slug/', component: () => import('pages/Category.vue') }
+      { name: 'category', path: '/category/:slug/', component: () => import('pages/category/Category.vue') },
+      { name: 'categoryFilter', path: '/category/:slug/:slugCategory/', component: () => import('pages/category/Category.vue') }
 
     ]
+  },
+  {
+    path: '/:catchAll(.*)*',
+    component: () => import('pages/Error404.vue')
   }
 ]
 

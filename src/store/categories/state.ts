@@ -5,7 +5,9 @@ export interface CatagoryStateInterface {
   isOpenPopup: boolean,
   cityList: City[] | null,
   categories: Category[] | null,
-  categoryItems: CategoryItem[] | null
+  categoryItems: CategoryItem[] | null,
+  loading: boolean,
+  cityError: string | null
 }
 
 function state (): CatagoryStateInterface {
@@ -13,12 +15,14 @@ function state (): CatagoryStateInterface {
     cityOption: {
       id: '1',
       city: 'Новосибирск',
-      label: 'Yjdjcb,bhcrfz j,kfcnm'
+      label: 'Новосиирская область, Новосибирск'
     },
     isOpenPopup: false,
     cityList: null,
     categories: null,
-    categoryItems: null
+    categoryItems: null,
+    loading: false,
+    cityError: null
   }
 }
 

@@ -1,0 +1,29 @@
+.button{
+  padding: 13px 13px 14px 13px;
+  letter-spacing: 1.75px;
+  width: 174px;
+  text-transform: uppercase;
+  border: 2px solid rgba(151, 151, 151, 0.3);
+  border-radius: 24px;
+  color: var(--main-bg-white);
+  font-size: 16px;
+  line-height: 21px;
+  cursor:pointer;
+  pointer-events: all;
+  background: linear-gradient(270deg, var(--main-orange2) 0%, var(--main-orange) 60.2%);
+  font-size: 16px;
+  line-height: 21px;
+  transition: transform .15s  ease, border .15s  ease;
+}
+
+.button._disable{
+  pointer-events: none;
+  background: var(--main-bg-white);
+  color: #ACACAC;
+  border: 2px solid rgba(151, 151, 151, 0.3);
+}
+.button:hover{
+  transform: scale(1.05);
+  border-width: 3px;
+  border: 2px solid rgba(71, 71, 71, 0.3);
+}

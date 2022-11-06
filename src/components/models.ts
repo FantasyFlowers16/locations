@@ -19,12 +19,17 @@ export interface Category {
   slug: string;
   id: number;
 }
+export interface CategoryItemDescription {
+  name: string;
+}
 
 export interface CategoryItem {
   slug: string;
   name: string;
+  'main_image_thumb_300': string;
   'comment_name': string;
   price: string;
+  category: CategoryItemDescription;
   available: boolean;
   allowed: boolean;
   tags: Category[] | null;

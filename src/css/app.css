@@ -1,3 +1,6 @@
 /* app global css */
 @import './form.css';
 @import './text.css';
+@import './controls.css';
+@import './fonts.css';
+@import './general.css';

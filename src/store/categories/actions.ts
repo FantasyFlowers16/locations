@@ -2,7 +2,7 @@ import { ActionTree } from 'vuex'
 import { StateInterface } from '../index'
 import { CatagoryStateInterface } from './state'
 import LoadService from '../../services/LoadService'
-import { City, Category } from 'src/components/models'
+import { City, Category, CategoryItem } from 'src/components/models'
 
 const actions: ActionTree<CatagoryStateInterface, StateInterface> = {
   async loadRegions (context, query:string) { //eslint-disable-line
@@ -18,7 +18,10 @@ const actions: ActionTree<CatagoryStateInterface, StateInterface> = {
             })
           })
           context.commit('changeCityList', cityArray)
-        } else context.commit('changeCityList', null)
+        } else {
+          context.commit('changeCityList', null)
+          context.commit('changeCityError', 'По запросу ничего не найдено')
+        }
       })
   },
   async loadCategoties (context, id:string) { //eslint-disable-line
@@ -30,13 +33,13 @@ const actions: ActionTree<CatagoryStateInterface, StateInterface> = {
         }
       })
   },
-  async loadCategory (context, slug:string) { //eslint-disable-line
+  async loadCategory (context, slug: string) { //eslint-disable-line
     const id = context.state.cityOption.id
     return await LoadService.apiRequest((`/menutags/${slug}/?city_id=${id}`)).then( //eslint-disable-line
       (result) => {
         console.log(result)
-        if (result.tags as Category[]) {
-          context.commit('changeCategoryItems', result.tags)
+        if (result.products as CategoryItem[]) {
+          context.commit('changeCategoryItems', result.products)
         }
       })
   }

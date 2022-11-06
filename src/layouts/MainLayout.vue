@@ -9,23 +9,13 @@
 
 <script lang="ts">
 import Header from 'src/components/header/Header.vue'
-import useController from './controller'
-import { defineComponent, onMounted } from 'vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'MainLayout',
 
   components: {
     Header
-  },
-
-  setup () {
-    const {
-      onMountedCallback
-    } = useController()
-
-    onMounted(onMountedCallback)
-    return {}
   }
 })
 </script>
@@ -33,6 +23,9 @@ export default defineComponent({
 <style scoped>
 .content {
   max-width: 1150px;
+  min-width: 360px;
+  overflow: auto;
   margin:  0 auto;
+  padding: 20px;
 }
 </style>
