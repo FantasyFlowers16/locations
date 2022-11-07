@@ -39,6 +39,8 @@ export default defineComponent({
   box-shadow: 0px 2px 10px rgba(151, 151, 151, 0.2);
   border-radius: 0px 0px 5px 5px;
   transition: box-shadow .15s ease;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
 }
 .product-item:hover{
@@ -65,6 +67,8 @@ export default defineComponent({
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+  flex-grow: 3;
+  position: relative;
 }
 .product-item__name-category{
   font-size: 14px;
@@ -95,7 +99,7 @@ export default defineComponent({
   font-weight: 600;
 }
 .product-item__but{
-  margin-top: 16px
+  margin-top: 16px;
 }
 
 @media screen and (min-width: 768px) {

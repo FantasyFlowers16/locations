@@ -54,10 +54,11 @@ export default {
 }
 .categories__item{
   height: 0px;
+  border-radius: 5px;
   width: 100%;
   position: relative;
   padding-top: 48%;
-
+  overflow: hidden;
 }
 
 .categories-item__img{
@@ -86,7 +87,7 @@ export default {
   .categories__item{
     position: relative;
     width: calc(25% - 16.6px);
-    padding-top: 11.893%;
+    padding-top: 13.695%;
   }
 }
 </style>

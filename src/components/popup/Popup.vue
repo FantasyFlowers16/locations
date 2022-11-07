@@ -6,11 +6,11 @@
         <div class="form__input-container" :class="{_active:cityList}">
           <input @input="changeInput" class="form__input" :class="{_active:cityList}" v-model="cityValue" />
           <div class="form__error" v-if="cityError">{{cityError}}</div>
-          <div v-if="cityList" class="form__autocomplete autocomplete">
-          <div class="autocomplete__item" @click="addCity(city)" v-for="city in cityList" :key="city.id">
+          <ul v-if="cityList" class="form__autocomplete autocomplete">
+          <li class="autocomplete__item" @click="addCity(city)" v-for="city in cityList" :key="city.id">
             {{city.label}}
-          </div>
-        </div>
+          </li>
+        </ul>
         </div>
         <button :class="{'_disable':!selectCity}" class="form__but button" @click="updateCity()">Подтвердить</button>
       </div>
@@ -42,6 +42,8 @@ export default {
       selectCity.value = false
       if (cityValue.value.length > 2) {
         void updateInfo(cityValue.value)
+      } else {
+        changeCityList(null)
       }
     }
     const addCity = (item) => {

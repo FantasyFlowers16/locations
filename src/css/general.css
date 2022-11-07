@@ -9,5 +9,8 @@
   --main-orange:#FF6F00;
   --main-orange2:#FFA800;
   --main-error: #da0d0d;
-
+}
+ul {
+  list-style-type: none;
+  margin: 0
 }

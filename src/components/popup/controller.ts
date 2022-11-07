@@ -21,6 +21,7 @@ const useController = () => {
   const loadCity = async (payload: string) => { await store.dispatch('categories/loadRegions', payload) }
   const closePopup = () => {
     changeIsOpenPopup(false)
+    changeCityList(null)
   }
   const selectedCity = async (item:City) => {
     changeLoading(true)
